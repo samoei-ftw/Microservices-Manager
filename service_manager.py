@@ -57,3 +57,8 @@ def shutdown():
     for service in list(processes.keys()):
         stop(service)
     print("All services stopped. Shutting down...")
+
+def startAll():
+    for service in SERVICES:
+        print(f"Starting service: {service}")
+        start(service)
