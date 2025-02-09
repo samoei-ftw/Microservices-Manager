@@ -6,6 +6,7 @@ It provides a CLI interface to start, stop, restart, and check the status of ser
 ## Feature List
 Start a Service \
 Stop a Service \
+Start all Services \
 Restart a Service \
 Check Service Status \
 List All Running Services \
@@ -14,9 +15,14 @@ Logging \
 Config File Support 
 
 ## How to Use:
+eg: Start all services in config file
+1. Add a config.json file with key-values for service names and their file paths. eg: {"service1":"dir/./run_local_docker.sh", "service2":"dir/./run_local_docker2.sh"} 
+2. python3 main.py start all 
+
+
 eg: Start 'service1' 
 1. Add a config.json file with key-values for service names and their file paths. eg: {"service1":"dir/./run_local_docker.sh"} 
-2. python3 main.py start service1 # todo: shorthand
+2. python3 main.py start service1 
 
 ## File structure
 | ----  `config.json` -> config file mapping service names to .sh scripts \
