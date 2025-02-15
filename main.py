@@ -3,7 +3,7 @@
 # Handles user input and calls service functions
 
 import argparse
-from service_manager import start, stop, restart, shutdown, list_services, startAll
+from service_manager import start, stop, restart, shutdown, list_services, start_all
 
 
 parser = argparse.ArgumentParser(description="Manage Docker microservices")
@@ -19,8 +19,9 @@ args = parser.parse_args()
 
 if args.command == "start" and args.service:
     if (args.service == "all"):
-        startAll()
-    start(args.service)
+        start_all()
+    else:
+        start(args.service)
 elif args.command == "stop" and args.service:
     stop(args.service)
 elif args.command == "restart" and args.service:
